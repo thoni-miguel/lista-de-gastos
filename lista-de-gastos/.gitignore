@@ -1,0 +1,39 @@
+# Arquivos de projeto
+*.iml
+.gradle
+/local.properties
+/.idea/
+/.DS_Store
+
+# Build output
+/build/
+/app/build/
+/captures/
+/outputs/
+/.cxx/
+/externalNativeBuild/
+
+# Configurações específicas da IDE
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/.idea/misc.xml
+/.idea/compiler.xml
+
+# Arquivos de sistema
+*.apk
+*.ap_
+*.db
+*.log
+
+# Backup & temporários
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Gerados pelo gradle
+/.gradle/
