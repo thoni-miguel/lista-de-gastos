@@ -6,12 +6,14 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.thoni.listadegastos.model.Categoria
 import com.thoni.listadegastos.model.Gasto
+import com.thoni.listadegastos.model.Item
 
-@Database(entities = [Gasto::class, Categoria::class], version = 2, exportSchema = false)
+@Database(entities = [Gasto::class, Categoria::class, Item::class], version = 3, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun gastoDao(): GastoDao
     abstract fun categoriaDao(): CategoriaDao
+    abstract fun itemDao(): ItemDao
 
     companion object {
         @Volatile

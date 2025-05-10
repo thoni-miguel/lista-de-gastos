@@ -11,6 +11,9 @@ import com.thoni.listadegastos.ui.CategoriaViewModel
 import com.thoni.listadegastos.ui.CategoriaViewModelFactory
 import com.thoni.listadegastos.ui.theme.ListaDeGastosTheme
 import com.thoni.listadegastos.ui.AppNavHost
+import com.thoni.listadegastos.ui.ItemViewModel
+import com.thoni.listadegastos.ui.ItemViewModelFactory
+import com.thoni.listadegastos.ui.screens.ItemScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,10 +21,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ListaDeGastosTheme {
-                val dao = AppDatabase.getDatabase(applicationContext).categoriaDao()
-                val viewModel: CategoriaViewModel = viewModel(factory = CategoriaViewModelFactory(dao))
+                val dao = AppDatabase.getDatabase(applicationContext).itemDao()
+                val viewModel: ItemViewModel = viewModel(factory = ItemViewModelFactory(dao))
                 val navController = rememberNavController()
-                AppNavHost(navController = navController, viewModel = viewModel)
+                ItemScreen(navController = navController, viewModel = viewModel, categoriaDao = AppDatabase.getDatabase(applicationContext).categoriaDao())
+//                AppNavHost(navController = navController, viewModel = viewModel)
             }
         }
     }

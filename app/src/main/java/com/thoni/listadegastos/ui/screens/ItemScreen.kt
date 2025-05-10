@@ -31,6 +31,7 @@ fun ItemScreen(
     viewModel: ItemViewModel,
     categoriaDao: CategoriaDao,
 ) {
+
     var showDialog by remember { mutableStateOf(false)}
 
     val items by viewModel.items.collectAsState()
